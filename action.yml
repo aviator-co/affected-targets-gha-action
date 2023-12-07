@@ -1,23 +1,23 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Aviator MergeQueue affected targets calculator for GitHub Actions workflows'
+description: 'Calculate affected targets based on GitHub Actions workflows'
+author: 'Aviator Technologies'
 
-# Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
   icon: 'heart'
   color: 'red'
 
-# Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  github-token:
+    description: The GitHub token used to create an authenticated client
+    default: ${{ github.token }}
+    required: false
+  aviator-api-url:
+    description: The Aviator pull_request API endpoint
+    default: "https://api.aviator.co/api/v1/pull_request/"
+    required: false
+  aviator-token:
+    description: The Aviator token for the Aviator API
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
 
 runs:
   using: node20
